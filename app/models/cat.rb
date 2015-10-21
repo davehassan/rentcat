@@ -10,7 +10,7 @@
 #  description :text
 #  created_at  :datetime
 #  updated_at  :datetime
-#  user_id     :integer
+#  user_id     :integer          not null
 #
 
 class Cat < ActiveRecord::Base

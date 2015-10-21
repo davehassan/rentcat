@@ -13,7 +13,7 @@
     value="<%= form_authenticity_token %>">
 
     <label for="user_username">Username</label>
-    <input type="text" name="user[username]" id="user_username">
+    <input type="text" name="user[user_name]" id="user_username">
     <br>
 
     <label for="user_password">Password</label>
@@ -21,4 +21,13 @@
     <br>
 
     <input type="Submit" value="Log in!">
+</form>
+
+<form action="/user/new" method="get">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+
+  <button>New User!</button>
 </form>

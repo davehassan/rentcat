@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
     )
 
     if @user.nil?
+      # fail
       flash.now[:errors] = ["Try again!"]
       render :new
     else

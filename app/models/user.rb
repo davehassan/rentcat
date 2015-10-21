@@ -21,6 +21,10 @@ class User < ActiveRecord::Base
 
   has_many :cats
 
+  has_many :requests,
+    class_name: "CatRentalRequest",
+    foreign_key: :user_id
+
   def self.find_by_credentials(user_name, password)
     #returns nil if credentials are no good
     user = User.find_by(user_name: user_name)
