@@ -5,14 +5,14 @@ Rails.application.routes.draw do
   # will recognize /cat_rental_requests/1/approve with a POST (etc.)
   # also route to approve/deny in cat_rental_requests and create urls
   resources :cat_rental_requests, only: [:new, :create] do
-    member do
-      post 'approve'
-      post 'deny'
-    end
+    post 'approve', on: :member
+    post 'deny', on: :member
   end
 
   resource :user, only: [:new, :create, :show]
   resource :session, only: [:new, :create, :destroy]
+
+  root to: redirect("/user")
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

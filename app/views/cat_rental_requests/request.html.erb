@@ -1,0 +1,41 @@
+<!-- Add a new request form to file requests.
+Use a dropdown to select the Cat desired. Your rental request form should upload a cat id.
+Use the date input type so the user may select start/end dates for the request. -->
+<form action="/cat_rental_requests" method="post">
+
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+
+  <label>
+    Pick a Cat!
+    <select name="cat_rental_request[cat_id]">
+    Select a Cat
+    <% @cats.each do |cat| %>
+      <option value="<%= cat.id %>">
+        <%= cat.name %>
+      </option>
+    <% end %>
+  </select>
+  </label>
+
+  <br>
+  <label>
+    Pick a start date!
+    <input type="date"
+      name="cat_rental_request[start_date]"
+      value="<%= @cat_rental_request.start_date %>">
+  </label>
+
+  <br>
+  <label>
+    Pick an end date!
+    <input type="date"
+      name="cat_rental_request[end_date]"
+      value="<%= @cat_rental_request.end_date %>">
+  </label>
+
+  <br>
+  <button>Submit!!!!one!!</button>
+</form>
