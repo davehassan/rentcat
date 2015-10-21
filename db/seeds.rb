@@ -3,9 +3,9 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-5.times do |i|
-  Cat.create(name: "#{i}", birth_date: Time.now - i.years, sex: "M", color: "black" )
-end
+# #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+# #   Mayor.create(name: 'Emanuel', city: cities.first)
+#
+# 5.times do |i|
+#   Cat.create(name: "#{i}", birth_date: Time.now - i.years, sex: "M", color: "black" )
+# end

@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
 
   before_validation :ensure_session_token
 
+  has_many :cats
+
   def self.find_by_credentials(user_name, password)
     #returns nil if credentials are no good
     user = User.find_by(user_name: user_name)
