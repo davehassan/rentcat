@@ -23,7 +23,10 @@
     </tr>
 </table>
 
-<%= link_to "Edit #{@cat.name}", edit_cat_url(@cat) %>
+
+<% if current_user.id == @cat.owner.id %>
+  <%= link_to "Edit #{@cat.name}", edit_cat_url(@cat) %>
+<% end %>
 
 <h2>Rental Requests</h2>
 <table>
