@@ -1,5 +1,17 @@
 <h1>New User</h1>
-<form action="<%= users_url %>" method="POST">
+
+<ul>
+  <% flash[:errors].try(:each) do |err_msg| %>
+    <li><%= err_msg %></li>
+  <% end %>
+</ul>
+
+<form action="<%= user_url %>" method="POST">
+
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>"
 
   <label>
     Username:
